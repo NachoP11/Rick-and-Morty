@@ -1,10 +1,11 @@
 import React from 'react';
 import Card from './Card';
+import style from './Cards.module.css'
 
 export default function Cards(props) {
    const characters = props.characters;
    return (
-      <div>
+      <div className={style.container}>
          {characters.map((elem) => (
             <Card
                key={elem.id}

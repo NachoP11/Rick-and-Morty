@@ -1,0 +1,27 @@
+.container{
+    background-color:black;
+    color: white;
+    width: 50%;
+    border-radius: 20px;
+    position: relative;
+    margin: 50px;
+}
+
+.btn{
+    background-color: red;
+    color: black;
+    cursor: pointer;
+    position: absolute;
+    right: 0px; 
+    border: none;
+    padding: 10px;
+}
+
+.containerData{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.image{
+    max-width: 100px;
+}
