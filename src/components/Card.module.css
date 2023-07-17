@@ -1,27 +1,49 @@
-.container{
-    background-color:black;
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255,255,255,.4);
     color: white;
-    width: 50%;
-    border-radius: 20px;
+    width: 230px;
+    height: 100%;
+    border-radius: 15px;
     position: relative;
-    margin: 50px;
+    transition: box-shadow 0.3s;
+ }
+.container:hover{
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5);
 }
 
-.btn{
-    background-color: red;
-    color: black;
-    cursor: pointer;
+
+.btn {
     position: absolute;
-    right: 0px; 
+    background-color: red;
+    border-radius: 0 15px 0 15px;
+    right: 0;
+    top: 0;
+    width: 33px;
+    height: 33px;
+    color: white;
+    cursor: pointer;
     border: none;
-    padding: 10px;
 }
 
-.containerData{
+.image {
+    object-fit: cover;
+    width: 230px;
+    height: 210px;
+    border-radius: 15px;
+}
+
+.containerData {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* .detail{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.image{
-    max-width: 100px;
-}
+    grid-template-rows: repeat(2, 1fr);
+} */

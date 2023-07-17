@@ -1,15 +1,24 @@
 import style from './SearchBar.module.css'
 
+import { useState } from 'react'
 
-export default function SearchBar({onSearch}) {
-   
-   
+export default function SearchBar(props) {
+   let [input, setInput] = useState("")
+
+   const handleChange = (event) => {
+      setInput(event.target.value)
+   } 
+
+   const handleSearch = (event) => {
+      // event.preventDefault()
+
+      props.onSearch(input)
+      setInput("")
+   }
    return (
-      <div className={style.container}>
-         <div className={style.containerInput}>
-         <input className={style.input} type='search' placeholder='Id'/>
-         <button className={style.btn} onClick={() => onSearch()}>Agregar</button>
-         </div>
+      <div style={style.container}>
+            <input className={style.input} onChange={handleChange} value={input} type='search' placeholder="Id"/>
+            <button className={style.btn} onClick={handleSearch}>Agregar</button>
       </div>
    );
-};
+}
