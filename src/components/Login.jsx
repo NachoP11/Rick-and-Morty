@@ -13,7 +13,7 @@ const Login = ({setLogin}) => {
 
     const handleLogin = (event) => {
         event.preventDefault(); 
-        if ( username== miEmail && password == miPass) {
+        if ( username === miEmail && password === miPass) {
             setError("")
             setLogin(true)
             navigate("/home")

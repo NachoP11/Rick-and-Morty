@@ -11,10 +11,11 @@ import About from './components/About'
 import axios from 'axios'
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import Login from "./components/Login"
+import Favorites from "./components/Favorites/Favorites"
 
 function App() {
    const [characters, setCharacters] = React.useState([])
-   const [login, setLogin] = React.useState(false)
+   const [login, setLogin] = React.useState(true)
    const location = useLocation()
    const navigate = useNavigate()
 
@@ -98,15 +99,18 @@ function App() {
      getCharacters();
    }, [])
 
+   const logOut = () => {};
+
    return (
       <div className='App'>
+         <Nav logOut={logOut}></Nav>
          <Routes>
          {/* <SearchBar onSearch={(characterID) => window.alert(characterID)} /> */}
             <Route path="/" element={<Login setLogin={setLogin} />} />
             <Route path="/home" element={<Cards characters={characters} onClose={onClose} onSearch={onSearch} />}/>
             <Route path="/about" element={<About />}/>
             <Route path="/detail/:id" element={<Detail />} />
-            
+            <Route path="/favorites" element={<Favorites />} />
          {/* <Card
             id={Rick.id}
             name={Rick.name}
